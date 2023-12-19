@@ -18,7 +18,7 @@ const debug = {
 let cache: Record<string, { cacheTime: number; data: PackageData }> = {}
 let cacheChanged = false
 
-const cacheDir = resolve(os.tmpdir(), 'taze')
+const cacheDir = resolve(os.tmpdir(), `taze-${os.userInfo().uid}`)
 const cachePath = resolve(cacheDir, 'cache.json')
 const cacheTTL = 30 * 60_000 // 30min
 
